@@ -1,0 +1,12 @@
+language: python
+
+flake8-steps: &flake8-steps
+        env: FLAKE8=true
+        cache: pip
+        install: pip install flake8
+        before_script:
+                - flake8 --version
+                - flake8 . --count --select=E9,F63,F72,F82 --show-source --statistics
+                - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        script:
+                - true
