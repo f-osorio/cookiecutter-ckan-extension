@@ -33,7 +33,7 @@ def recut():
     if context['project_shortname'] != context['project'][8:]:
         context['project_shortname'] = context['project'][8:]
 
-    plugin_class_name = '{}Plugin'.format(context['project_shortname']):
+    plugin_class_name = '{}Plugin'.format(context['project_shortname'])
     if context['plugin_class_name'] != plugin_class_name:
         context['plugin_class_name'] = plugin_class_name
 
