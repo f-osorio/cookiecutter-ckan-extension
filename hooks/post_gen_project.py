@@ -4,6 +4,7 @@ import jinja2
 import cookiecutter.find as find
 import cookiecutter.generate as gen
 from cookiecutter.environment import StrictEnvironment
+from cookiecutter.exceptions import NonTemplatedInputDirException
 
 
 def recut():
@@ -12,6 +13,14 @@ def recut():
     """
     # template location
     temp_dir = find.find_template('..')
+    try:
+        # cutting cookie from directory with template
+        temp_dir = find.find_template('..')
+    except NonTemplatedInputDirException as e:
+        # template coming from Github
+        temp_dir = os.path.join('.', '.cookiecutters',
+                                'cookiecutter-ckan-extension')
+
     # Location for resulting file
     destination = os.getcwd()
     # name of template
