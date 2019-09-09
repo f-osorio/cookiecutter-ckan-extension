@@ -18,7 +18,7 @@ def recut():
     except NonTemplatedInputDirException as e:
         # template coming from Github
         {% raw %}
-        temp_dir = os.path.abspath(os.path.join('./', '.cookiecutters',
+        temp_dir = os.path.abspath(os.path.join('../', '.cookiecutters',
                                 'cookiecutter-ckan-extension',
                                 '{{cookiecutter.project}}'))
         {% endraw %}
