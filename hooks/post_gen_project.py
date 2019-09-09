@@ -18,8 +18,8 @@ def recut():
         temp_dir = find.find_template('..')
     except NonTemplatedInputDirException as e:
         # template coming from Github
-        # Hooks are passed through jinja2. {% raw %} will
-        # Make sure `{{cookiecutter.project}}` isn't replaced
+        # Hooks are passed through jinja2. raw will
+        # Make sure `cookiecutter.project` isn't replaced
         {% raw %}
         temp_dir = os.path.join(config['cookiecutters_dir'],
                                 'cookiecutter-ckan-extension',
