@@ -12,14 +12,13 @@ def recut():
         Recreate setup.py so that we can edit keywords
     """
     # template location
-    temp_dir = find.find_template('..')
     try:
         # cutting cookie from directory with template
         temp_dir = find.find_template('..')
     except NonTemplatedInputDirException as e:
         # template coming from Github
-        temp_dir = os.path.join('.', '.cookiecutters',
-                                'cookiecutter-ckan-extension')
+        temp_dir = os.path.abspath(os.path.join('./', '.cookiecutters',
+                                'cookiecutter-ckan-extension'))
 
     # Location for resulting file
     destination = os.getcwd()
