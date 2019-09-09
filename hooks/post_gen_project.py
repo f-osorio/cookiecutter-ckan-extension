@@ -17,9 +17,11 @@ def recut():
         temp_dir = find.find_template('..')
     except NonTemplatedInputDirException as e:
         # template coming from Github
+        {% raw %}
         temp_dir = os.path.abspath(os.path.join('./', '.cookiecutters',
                                 'cookiecutter-ckan-extension',
                                 '{{cookiecutter.project}}'))
+        {% endraw %}
 
     # Location for resulting file
     destination = os.getcwd()
