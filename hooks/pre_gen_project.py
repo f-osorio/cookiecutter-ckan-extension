@@ -12,4 +12,3 @@ def validate_project_name():
 
 if __name__ == '__main__':
     validate_project_name()
-

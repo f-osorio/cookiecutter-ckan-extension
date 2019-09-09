@@ -1,10 +1,10 @@
 {
-    "project": "ckanext-extension",
-    "keywords": "CKAN",
-    "description": "A simple extension for CKAN",
+    "project": "Project's name (must begin with 'ckanext-')",
+    "keywords": "A space seperated list of keywords",
+    "description": "",
     "author": "",
     "author_email": "",
-    "github_user_name": "",
+    "github_user_name": "Github user or organization name",
     "project_shortname": "{{ cookiecutter.project[8:].lower() }}",
     "plugin_class_name": "{{ cookiecutter.project_shortname.title() }}Plugin"
 }
