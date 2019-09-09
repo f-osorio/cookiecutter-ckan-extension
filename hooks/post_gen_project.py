@@ -3,6 +3,7 @@ import json
 import jinja2
 import cookiecutter.find as find
 import cookiecutter.generate as gen
+from cookiecutter.config import DEFAULT_CONFIG as config
 from cookiecutter.environment import StrictEnvironment
 from cookiecutter.exceptions import NonTemplatedInputDirException
 
@@ -18,9 +19,9 @@ def recut():
     except NonTemplatedInputDirException as e:
         # template coming from Github
         {% raw %}
-        temp_dir = os.path.abspath(os.path.join('../', '.cookiecutters',
+        temp_dir = os.path.abspath(config['cookiecuters_dir'],
                                 'cookiecutter-ckan-extension',
-                                '{{cookiecutter.project}}'))
+                                '{{cookiecutter.project}}')
         {% endraw %}
 
     # Location for resulting file
