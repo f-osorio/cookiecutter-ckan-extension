@@ -44,10 +44,12 @@ def recut():
     context['keywords'] = keywords
 
     # Double check 'project_shortname' and 'plugin_class_name'
-    if context['project_shortname'] != context['project'][8:]:
-        context['project_shortname'] = context['project'][8:]
+    short_name = context['project'][8:].replace('-','_')
+    if context['project_shortname'] != short_name:
+        context['project_shortname'] = short_name
 
-    plugin_class_name = '{}Plugin'.format(context['project_shortname'])
+    plugin_class_name = '{}Plugin'.format(context['project_shortname']/
+                        .title().replace('_',''))
     if context['plugin_class_name'] != plugin_class_name:
         context['plugin_class_name'] = plugin_class_name
 
