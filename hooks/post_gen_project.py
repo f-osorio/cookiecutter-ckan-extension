@@ -48,7 +48,7 @@ def recut():
     if context['project_shortname'] != short_name:
         context['project_shortname'] = short_name
 
-    plugin_class_name = '{}Plugin'.format(context['project_shortname']/
+    plugin_class_name = '{}Plugin'.format(context['project_shortname']\
                         .title().replace('_',''))
     if context['plugin_class_name'] != plugin_class_name:
         context['plugin_class_name'] = plugin_class_name
