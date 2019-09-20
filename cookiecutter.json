@@ -6,5 +6,6 @@
     "author_email": "",
     "github_user_name": "Github user or organization name",
     "project_shortname": "{{ cookiecutter.project[8:].lower().replace('-','_') }}",
-    "plugin_class_name": "{{ cookiecutter.project_shortname.title().replace('_','') }}Plugin"
+    "plugin_class_name": "{{ cookiecutter.project_shortname.title().replace('_','') }}Plugin",
+    "_source": "local"
 }

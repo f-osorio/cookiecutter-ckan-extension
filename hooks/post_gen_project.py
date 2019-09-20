@@ -6,6 +6,7 @@ import cookiecutter.generate as gen
 from cookiecutter.config import DEFAULT_CONFIG as config
 from cookiecutter.environment import StrictEnvironment
 from cookiecutter.exceptions import NonTemplatedInputDirException
+from cookiecutter.main import cookiecutter as c
 
 
 def recut():
@@ -63,4 +64,6 @@ def recut():
 
 
 if __name__ == '__main__':
-    recut()
+    context = {{ cookiecutter | jsonify }}
+    if context['_source'] == 'local':
+        recut()
